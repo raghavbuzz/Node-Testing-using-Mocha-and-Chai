@@ -117,5 +117,14 @@ describe("Cart", () => {
 
             expect(cart.lineItems).to.eql(emptyArray);
         })
+
+        it('should have a different object when empties than the original array', () => {
+
+            let originalLineItems = cart.lineItems;            
+            
+            cart.empty();
+
+            expect(cart.lineItems).to.not.eq(originalLineItems);
+        })
     })
 })
